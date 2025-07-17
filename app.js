@@ -75,23 +75,18 @@ function parseGridFromData() {
     //     { x: 72, y: 6, character: '█' }
     // ];
   
-    // Step 2: Find the dimensions of the grid (max x and y)
     const maxX = Math.max(...rawData.map(data => data.x));
     const maxY = Math.max(...rawData.map(data => data.y));
 
-    // Step 3: Initialize an empty grid (fill with spaces)
     const grid = Array.from({ length: maxY + 1 }, () => Array(maxX + 1).fill(' '));
 
-    // Step 4: Place the characters in the grid at the specified positions
     rawData.forEach(({ x, y, char }) => {
         grid[y][x] = char;
     });
 
-    // Step 5: Print the grid row by row
     grid.forEach(row => {
         console.log(row.join(''));
     });
 }
 
-// Call the function to display the grid
 parseGridFromData();
