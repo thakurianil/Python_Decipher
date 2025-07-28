@@ -30,3 +30,4 @@ for x, char, y in data:
 for row in grid:
     print("".join(row))
 
+//gg
